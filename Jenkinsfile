@@ -10,19 +10,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run Playwright Tests') {
             steps {
-                sh 'npx playwright test --reporter=list'
+                bat 'npx playwright test --reporter=list'
             }
         }
 
         stage('Archive Report') {
             steps {
-                sh 'npx playwright show-report'
+                bat 'npx playwright show-report'
                 archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
             }
         }
