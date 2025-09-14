@@ -12,4 +12,6 @@
     "@types/node": "^24.3.3",
     "@zerostep/playwright": "^0.1.5"
   }
+  "test:ci": "npx playwright test --reporter=junit --output=results"
+
 }
